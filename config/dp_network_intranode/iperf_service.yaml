@@ -5,7 +5,7 @@ metadata:
   namespace: kbench-pod-namespace
 spec:
   selector:
-    name: myiperf 
+    name: myiperf
   clusterIP: None
   ports:
   - name: foo # Actually, no port is needed.

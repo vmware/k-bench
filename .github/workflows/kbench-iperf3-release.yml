@@ -1,0 +1,33 @@
+name: Build and push docker image for k-bench iperf3 test containers
+
+on:
+  push:
+    paths:
+      - "test_images/**"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image
+        run: |
+          cd test_images
+          make build-kbench-iperf3
+          make push-kbench-iperf3
+        env:
+          IMAGE_REPO: ghcr.io/${{ github.repository_owner }}
+          IMAGE_TAG: ${{ github.ref_name }}

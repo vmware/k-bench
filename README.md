@@ -336,12 +336,5 @@ For examples on how to use predicates, you may check config file samples under .
 
 ## Contributing to the Benchmark 
 
-Please contact the project members and read CONTRIBUTING.md if you are interested in making contributions.
+Please contact k-bench-maintainers.pdl@broadcom.com and read CONTRIBUTING.md if you are interested in making contributions.
 
-## Project Leads
-Karthik Ganesan
-Email: ganesank@vmware.com for questions and comments
-
-## Contributors
-Yong Li 
-Helen Liu
